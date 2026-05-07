@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>테트리스</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-wrapper">
+    <div class="game-container">
+      <div class="board-section">
+        <canvas id="board" width="300" height="600"></canvas>
+        <canvas id="overlay" width="300" height="600"></canvas>
+      </div>
+      <div class="side-panel">
+        <div class="panel-block">
+          <div class="panel-label">NEXT</div>
+          <canvas id="next" width="120" height="280"></canvas>
+        </div>
+        <div class="panel-block">
+          <div class="panel-label">HOLD</div>
+          <canvas id="hold" width="120" height="120"></canvas>
+        </div>
+        <div class="panel-block">
+          <div class="panel-label">SCORE</div>
+          <div class="panel-value" id="score">0</div>
+        </div>
+        <div class="panel-block">
+          <div class="panel-label">LEVEL</div>
+          <div class="panel-value" id="level">1</div>
+        </div>
+        <div class="panel-block">
+          <div class="panel-label">LINES</div>
+          <div class="panel-value" id="lines">0</div>
+        </div>
+        <div class="panel-block">
+          <div class="panel-label">BEST</div>
+          <div class="panel-value best-value" id="best">0</div>
+        </div>
+        <div class="panel-block controls-info">
+          <div class="panel-label">CONTROLS</div>
+          <div class="key-row"><kbd>←</kbd><kbd>→</kbd> 이동</div>
+          <div class="key-row"><kbd>↑</kbd><kbd>X</kbd> 시계 회전</div>
+          <div class="key-row"><kbd>Z</kbd> 반시계 회전</div>
+          <div class="key-row"><kbd>↓</kbd> 소프트 드롭</div>
+          <div class="key-row"><kbd>Space</kbd> 하드 드롭</div>
+          <div class="key-row"><kbd>C</kbd> 홀드</div>
+          <div class="key-row"><kbd>P</kbd> 일시정지</div>
+        </div>
+        <button id="startBtn" class="btn">시작</button>
+      </div>
+    </div>
+    <div class="touch-controls">
+      <div class="touch-row">
+        <button class="touch-btn" id="btnRotateCCW">↺</button>
+        <button class="touch-btn" id="btnLeft">←</button>
+        <button class="touch-btn" id="btnDown">↓</button>
+        <button class="touch-btn" id="btnRight">→</button>
+        <button class="touch-btn" id="btnRotateCW">↻</button>
+      </div>
+      <div class="touch-row">
+        <button class="touch-btn touch-wide" id="btnHold">HOLD</button>
+        <button class="touch-btn touch-wide" id="btnHardDrop">⬇⬇ DROP</button>
+      </div>
+    </div>
+  </div>
+  <script src="tetris.js"></script>
+</body>
+</html>
