@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /Users/yundoserk2/claude/gamegroup && git add -A && git commit -m \"auto: $(date +%Y-%m-%dT%H:%M:%S)\" && git push"
+          }
+        ]
+      }
+    ]
+  }
+}
